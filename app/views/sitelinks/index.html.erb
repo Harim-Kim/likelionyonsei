@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sitelinks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sitelinks.each do |sitelink| %>
+      <tr>
+        <td><%= sitelink.name %></td>
+        <td><%= sitelink.url %></td>
+        <td><%= link_to 'Show', sitelink %></td>
+        <td><%= link_to 'Edit', edit_sitelink_path(sitelink) %></td>
+        <td><%= link_to 'Destroy', sitelink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sitelink', new_sitelink_path %>

@@ -39,7 +39,6 @@
 
 //= require  js/nprogress.js
 
-//= require flash.js
 
 
 

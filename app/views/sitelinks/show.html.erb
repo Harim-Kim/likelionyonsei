@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sitelink.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @sitelink.url %>
+</p>
+
+<%= link_to 'Edit', edit_sitelink_path(@sitelink) %> |
+<%= link_to 'Back', sitelinks_path %>
