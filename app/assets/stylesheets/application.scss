@@ -16,14 +16,13 @@
 
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
-@import "css/animate.min";
-@import "css/custom";
-@import "css/icheck/flat/green";
-@import "css/floatexamples";
-@import "css/normalize";
-@import "css/ion.rangeSlider";
-@import "css/ion.rangeSlider.skinFlat";
-@import "pace";
+@import 'nanumbarungothic.css';
+.only_for_login{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width:40%;
+}

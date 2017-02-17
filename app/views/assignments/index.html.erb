@@ -1,0 +1,14 @@
+  <div class="container">
+    <h2><%=@assign.title%></h2>
+    <div class="parent">
+      <% @assignments.each do |a| %>
+            <div class="assignments2" style="text-align:center">
+              <p><%=a.name%></p>
+              <a href="/assignment/<%=@num%>/<%=a.user_id%>">
+                  <img class="img_list" src="<%=a.img_url%>">
+              </a>
+            </div>
+      <% end %>
+    </div>
+  </div>
+

@@ -1,0 +1,46 @@
+<%= render "partials/sidenav" %>
+<%= render "partials/topnav" %>
+<div class="right_col" role="main">
+  <div class="">
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>자유게시판</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>제목</th>
+                  <th>글쓴이</th>
+                  <th>날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @all_post.each do |a| %>
+                <tr>
+                  
+                  <td><a href="/post/<%=a.id%>"><%=a.title%></a></td>
+                  <td><%=a.name%></td>
+                  <td><%=a.monthi%>.<%=a.day%></td> 
+                  
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <a href="/post/new">글 쓰기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
