@@ -1,0 +1,31 @@
+<%= render "partials/sidenav" %>
+<%= render "partials/topnav" %>
+
+<div class="right_col" role="main" >
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>게시판</h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>글작성하기</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <form action="/create_post" method="post" enctype="multipart/form-data">
+              제목 <input type="text" name="title" class="form-control"><br>
+              내용 <textarea rows="4" class="form-control" type="text" name="content"></textarea><br>
+              <input type="file" name="pic" accept="image/*" class="btn btn-md btn-default">
+              <input type="submit" value="Submit" class="btn btn-md btn-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

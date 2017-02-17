@@ -1,5 +1,6 @@
 class PartialsController < ApplicationController
     def _sidenav
-        # @site = Site.all
+      @sl = Sl.all.sort
+    @fl = Fl.all.sort
     end
 end

@@ -1,0 +1,134 @@
+
+.hide {
+    display: none;
+}
+
+
+.parent {
+    margin-left: auto;
+    margin-right: auto;
+}
+.parent::after {
+  content: '';
+  display: block;
+  clear: both;
+  text-align: center;
+}
+
+
+.assignments {
+    box-sizing: border-box;
+    float: left;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    height: 300px;
+    width: 200px;
+}
+
+.assignments2 {
+    box-sizing: border-box;
+    float: left;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    height: 300px;
+    width: 200px;
+}
+
+
+.assignment {
+    width: 100%;
+    height: auto;
+    border: 1px solid gray;
+    margin-bottom: 0;
+}
+
+.detail1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    width: 40%;
+}
+
+.detail_img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; 
+    margin-bottom: 10px;
+}
+
+.img_list {
+    width: 90%;
+    height: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.assignment-img {
+    width: 80%;
+    height: 500px;
+}
+
+.img_box {
+    
+}
+
+.title {
+    text-align: center;
+}
+
+.submit_button {
+    width: 100px;
+    background-color: orange;
+    text-align: center;
+}
+
+.a_button {
+    color: white;
+    text-decoration: none;
+}
+
+.btn_darkorange {
+    margin-left: 15px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #FF7022;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn_yellow {
+    margin-left: 15px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #ffc600;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn_div {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.user_name {
+    margin-left: 5%;
+}
+

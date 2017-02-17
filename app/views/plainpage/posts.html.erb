@@ -1,0 +1,46 @@
+<%= render "partials/sidenav" %>
+<%= render "partials/topnav" %>
+<div class="right_col" role="main" >
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3></h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title"  >
+            <h2><%=@posts.title%> | <small><%=@posts.name%></small></h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content" style="margin-bottom:15px">
+              <img src="<%=@posts.img_url%>">
+            <br>
+            <%=@posts.content%>
+          </div>
+          <br>
+          <a href="/post_list">목록으로</a> | 
+          <% if @posts.user_id == current_user.id %>
+            <a href="/post/<%=@posts.id%>/update">수정</a> |
+            <a href="/post/<%=@posts.id%>/delete">삭제</a>
+          <% end %><hr>
+          <div class="clearfix"></div>
+          <p>댓글</p>
+          <% @replies.each do |r| %>
+            <strong><%=r.name%></strong> | <%=r.created_at%><br>
+            <%=r.content%><br>
+          <% end %>
+    <div class="container">
+      <form action="/create_reply" method="post">
+        <textarea rows="4" class="form-control" type="text" name="content"></textarea><br>
+         <input name="id_of_post" type="hidden" value="<%=@posts.id%>">
+        <input type="submit" value="Submit" class="btn btn-md btn-primary">
+      </form>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,52 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/index'
+  devise_for :users, controllers:{
+    session: 'users/sessions'
+  }
+  
+  
+  
+  
+  
+  
+  
+  get 'assignment/:id' => 'plainpage#assignment'
+  get 'assignment/:id/submit' => 'plainpage#submit_assignment'
+  get 'assignment/:assign_id/:user_id' => 'plainpage#show_assignment'
+  post 'assignment/create_assignment' => 'plainpage#create_assignment'
+  
+  post 'create_comment' => 'plainpage#create_comment'
+  # get 'plainpage/formm'
+
+  get 'notice_list' => 'plainpage#notice_list'
+  get 'notice/:id' => 'plainpage#notice'
+  
+  
+  get 'post_list' => 'plainpage#post_list'
+  get 'post/new' => 'plainpage#new_post'
+  get 'post/:id' => 'plainpage#posts'
+  post 'create_post' => 'plainpage#create_post'
+  post 'create_reply' => 'plainpage#create_reply'
+  get 'post/:id/update' => 'plainpage#update_post'
+  get 'post/:id/delete' => 'plainpage#delete_post'
+  post 'post/:id/updating' => 'plainpage#updating_post'
+
+  # resources :plainpages
+
   resources :accounts
-  resources :sitelinks
-  resources :facebooklinks
+  
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # resources :sites
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'plainpage#index'
+   get 'plainpage/index'
    get 'plainpage/accounting'
    get 'plainpage/index'
+   get 'plainpage/sign_in'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
