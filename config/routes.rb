@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
+  get 'users/sign_up' => 'access#denied'
   devise_for :users, controllers:{
     session: 'users/sessions'
   }
@@ -46,7 +47,7 @@ Rails.application.routes.draw do
    get 'plainpage/index'
    get 'plainpage/accounting'
    get 'plainpage/index'
-   get 'plainpage/sign_in'
+   get 'plainpage/page_403'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

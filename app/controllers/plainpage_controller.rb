@@ -175,9 +175,5 @@ class PlainpageController < ApplicationController
    @sl = Sl.all.sort
     @fl = Fl.all.sort
   end
-  
-
-  
-  
-
+ 
 end
