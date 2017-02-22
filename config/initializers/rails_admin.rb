@@ -6,7 +6,7 @@ RailsAdmin.config do |config|
   config.authenticate_with do
 	    warden.authenticate! scope: :user
 	    if current_user.admin==false
-	      redirect_to main_app.root_path
+	      redirect_to main_app.plainpage_index_path
 	    end
 	  end
 	config.current_user_method(&:current_user)
