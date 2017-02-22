@@ -1,160 +1,754 @@
-
-<section class="landing media" id="landing" style="background-image:url(<%=image_path 'yll3.jpg'%>)">
-    <div class="in">
-        <div class="inin media-middle">
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">
-              지금 바로 지원하세요! :)
+<!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-bars"></i>
             </button>
+            <a class="navbar-brand page-scroll" href="#page-top" style="color:orange;"><%=image_tag 'sheild.png', class:"brand-logo"%></a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#services">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#portfolio">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#about">QnA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#team">Member</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#sponsor">Sponsor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/users/sign_in"><strong>로그인</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Mar 11, 2017 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+        
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+        
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Output the result in an element with class="count"
+        var elements = document.getElementsByClassName("count");
+
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 ";
+        }
+        
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
             
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">멋사 5기 모집</h4>
-                  </div>
-                  <div class="modal-body">
-                    <h2 style="color:black; margin-top:50px">2월 25일 ~ 3월 10일</h2>
-                    <p style="color:black; margin-bottom:50px"> 자소설닷컴 링크가 준비되는대로 공지하겠습니다! </br> 페이스북 페이지를 확인해주세요!
+            for (var i = 0; i < elements.length; i++) {
+              elements[i].innerHTML = "00일 00시간 00분 00초";
+            }
+        }
+    }, 1000);
+</script>
+
+    <!-- Header -->
+    <header style="background-image:url(<%=image_path 'likelion.jpg'%>);">
+        <div class="container">
+            <div class="intro-text" >
+                <div class="intro-lead-in">
+                    <span class="typed intro-lead-in" style="white-space:pre;"></span>
+                </div>
+                <h3>지원마감까지</h3>
+                <div class="intro-heading count"></div>
+                <a href="#about" class="page-scroll btn btn-xl" style="padding: 20px;">지원하기</a>
+            </div>
+        </div>
+    </header>
+    
+    <style>
+        /* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+    </style>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Likelion</h2>
+                    <h3 class="section-subheading ">내 아이디어를 내 손으로 실현한다. <br>
+                    컴퓨터를 모르는 학생들이 프로그래밍 교육을 통해 원하는 IT서비스를 직접 런칭합니다.
+                    </h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">MISSION</h4>
+                    <p class="text-muted"><%=image_tag 'mission.JPG', class:"img-fluid"%></p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">SERVICE</h4>
+                    <p class="text-muted"><%=image_tag 'service.JPG', class:"img-fluid"%></p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-history fa-stack-1x fa-inverse" ></i>
+                    </span>
+                    <h4 class="service-heading">HISTORY</h4>
+                    <p class="text-muted"><%=image_tag 'histroy.JPG', class:"img-fluid"%></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section id="portfolio" class="bg-faded">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Schedule</h2>
+                    <h3 class="section-subheading text-muted">멋쟁이사자처럼 @ 연세대학교의 일정을 소개합니다. 자세한 내용은 클릭해주세요.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <%=image_tag 'poster.png', class:"img-fluid"%>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>선발 & 면접</strong></h4>
+                        <p class="text-muted">2월25일~3월10일 / 3월13일~3월14일</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <%=image_tag 'ot.jpg', class:"img-fluid"%>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>오티 & 엠티</strong></h4>
+                        <p class="text-muted">친해져요 + 교류해요</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <%=image_tag 'study.jpeg', class:"img-fluid"%>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>스터디</strong></h4>
+                        <p class="text-muted">같이 배우고 나눕니다.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <%=image_tag 'session.jpeg', class:"img-fluid"%>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>정기세션</strong></h4>
+                        <p class="text-muted">커리큘럼에 따른 세션을 진행합니다.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <%=image_tag 'hackaton3.jpg', class:"img-fluid"%>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>아디어톤 & 해커톤</strong></h4>
+                        <p class="text-muted">아이디어를 공유하고 구현합니다.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <%=image_tag 'gangnam.JPG', class:"img-fluid"%>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>2학기 일정</strong></h4>
+                        <p class="text-muted">심화학습이 진행됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Question    &    Apply </h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <!--<div class="container">-->
+            <!--<div class="row" >-->
+             <div class="row grid-divider">
+                <div class="col-sm-6" style="margin-bottom:50px;">
+                  <div class="col-padding">
+                    <h3><strong>궁금하신 점이 생기셨나요?</strong></h3>
+                    <p style="margin-bottom:20px;">아래를 통해 자유롭게 질문해주세요 ! 
+                    세션, 스터디, 프로그래밍 등등 상관없이 모두 질문하세요!
+                    다양한 루트를 통해 질문을 받고 있습니다. 
+                    항상 빠른 답변하겠습니다.
                     </p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <a href="http://jasoseol.com/" target="_blank"><button type="button" class="btn btn-primary">지원하러가기</button></a>
+                    <a href="http://fb.com/yonsei.likelion" target="_blank"><button type="button" class="btn btn-secondary bt" style="background-image:url(<%=image_path "fb-bt.png", class:"bt-img"%>)"></button></a>
+                    <a href="http://plus.kakao.com/home/l79ylhe0" target="_blank"><button type="button" class="btn btn-secondary bt" style="background-image:url(<%=image_path "yello-bt.png", class:"bt-img"%>)"></button></a>
                   </div>
                 </div>
-              </div>
+                <div class="col-sm-6" style="margin-bottom:50px;">
+                  <div class="col-padding">
+                    <h3><strong>지원하고 싶어졌나요?</strong></h3>
+                    <p style="margin-bottom:20px;">멋쟁이사자처럼 5기는 자소설 닷컴(멋사를 통해 만들어졌습니다!)를 통해 지원을 받고있습니다.
+                    채용 공고란을 통해 들어가 2월25일부터 3월10일까지의<font style="background-color:#fed136;"> 멋쟁이사자처럼 at 연세대학교</font>를 찾아주세요!
+                    </p>
+                     <a href="http://jasoseol.com/" target="_blank"><button type="button" class="btn btn-secondary bt-jiwon" style="background-image:url(<%=image_path "jasoseol.png", class:"bt-img"%>); background-color:beige;"></button></a>                  
+                     </div>
+                </div>
+            </div>
+                
+                <!--<div class="col-md col-sm-12">-->
+                <!--    <h5 style="text-align:center; font-weight:bold;">궁금한 점이 생겼나요?</h4>-->
+                <!--    <p style="text-align:center;">아래의 연락망을 통해 저희에게 자유롭게 질문해주세요 ! 개발을 할줄 모르는데 지원해도 되는지 걱정되신다면 부담없이 질문 해주세요. 백번의 고민보다 한번의 질문이 더 낫습니다. ( 페이스북을 통해 질문 해주시면 다양한 튜터들로부터 빠른 답변을 받으실 수 있습니다. )</p>-->
+                    
+                    
+                <!--</div>-->
+                <!--<div class="col-division" style="background:black;"></div>-->
+                <!--<div class="col-md col-sm-12">-->
+                <!--    <h5 style="text-align:center;  width:90%;">지원하고 싶어졌나요?</h4>-->
+                    
+                <!--</div>-->
+            <!--    </div>-->
+            <!--</div>-->
+        </div>
+    </section>
+
+    <!-- Team -->
+   <section id="team" class="bg-faded">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">OFFICIAL MEMBER</h2>
+                    <h3 class="section-subheading text-muted">5기와 함께할 운영진입니다.</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="row align-items-start">
+                    <div class="col team-member" style="margin-bottom: 0px;">
+                        <div class="hover panel">
+                          <div class="front">
+                            <div class="box1" style="background-image:url(<%=image_path "seyoung.jpg", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="box2" style="background-image:url(<%=image_path "seyoung2.png", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+                    <div class="col member-position" style="text-align:center;"><strong>TUTOR & DESIGNER</strong></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row align-items-start">
+                    <div class="col team-member" style="margin-bottom: 0px;">
+                        <div class="hover panel">
+                          <div class="front">
+                            <div class="box1" style="background-image:url(<%=image_path "harim.jpg", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="box2" style="background-image:url(<%=image_path "harim2.png", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+                    <div class="col member-position" style="text-align:center;"><strong>LEADER</strong></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row align-items-start">
+                    <div class="col team-member" style="margin-bottom: 0px;">
+                        <div class="hover panel">
+                          <div class="front">
+                            <div class="box1" style="background-image:url(<%=image_path "changmin.jpg", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="box2" style="background-image:url(<%=image_path "chanmin2.png", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+                    <div class="col member-position" style="text-align:center;"><strong>TUTOR & DEVELOPER</strong></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="row align-items-start">
+                    <div class="col team-member" style="margin-bottom: 0px;">
+                        <div class="hover panel">
+                          <div class="front">
+                            <div class="box1" style="background-image:url(<%=image_path "jinsu.jpg", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="box2" style="background-image:url(<%=image_path "jinsoo2.png", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          
+                        </div>  
+                    </div>
+                    <div class="col member-position" style="text-align:center;"><strong>TUTOR & DEVELOPER</strong></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="row align-items-start">
+                    <div class="col team-member" style="margin-bottom: 0px;">
+                        <div class="hover panel">
+                          <div class="front">
+                            <div class="box1" style="background-image:url(<%=image_path "sejong.jpg", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="box2" style="background-image:url(<%=image_path "sejong2.png", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+                    <div class="col member-position" style="text-align:center;"><strong>DEVELOPER</strong></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="row align-items-start">
+                    <div class="col team-member" style="margin-bottom: 0px;">
+                        <div class="hover panel">
+                          <div class="front">
+                            <div class="box1" style="background-image:url(<%=image_path "taki.jpg", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="box2" style="background-image:url(<%=image_path "taki2.png", :class => 'card_img'%>);">
+                            </div>
+                          </div>
+                        </div>  
+                    </div>
+                    <div class="col member-position" style="text-align:center;"><strong>LEAD OFFICER</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients -->
+    <aside class="clients" id="sponsor">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'google.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'aws.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'fuse.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'smilegate.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'jangeun.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'primer.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'campusseoul.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'multicampus.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'vingle.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'yellomobile.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'bonangels.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'jpub.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-4">
+                    <a href="#">
+                        <%=image_tag 'fasttrackasia.png', class:"img-fluid d-block mx-auto"%>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Contact -->
+   
+
+    <!-- Footer -->
+    <footer style="background:black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright" style="color:lightslategray;">Copyright &copy; Yonsei Likelion 2017</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-phone-square"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/yonsei.likelion" target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="/users/sign_in"><i class="fa fa-sign-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item" style="color:lightslategray;">DEVELOPER @ CHANGMIN / JINSU / HARIM </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2><strong>선발 및 면접</strong></h2>
+                                <p class="item-intro text-muted">아래의 버튼을 통해 자소설 닷컴으로 이동 할 수 있습니다.</p>
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-6 col-xs-6">-->
+                                        <%=image_tag 'poster1.png', class:"img-fluid d-block mx-auto"%>
+                                    <!--</div>-->
+                                    
+                                    <!--<div class="col-md-6 col-xs-6">-->
+                                        <a href="http://jasoseol.com/" target="_blank"><button type="button" class="btn btn-primary">지원하기</button></a>
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<section class="introduction" id="introduction">
-    <div class="introduction-intro"><h2><strong>LIKELION SINCE 2013</strong></h2></div>
-    <div class="introduction-tag">
-    <h3>"내 아이디어를 내 손으로 실현한다."</h3>
-    <h4>컴퓨터를 전혀 모르는 학생들이 코딩 교육을 통해 원하는 IT 서비스를 직접 런칭합니다.</h4>
-    </div>
-    <!--videos-->
-        <div class="youtubeWrap">
-          <iframe width="350" height="250" src="https://www.youtube.com/embed/pv3fCmVPsdc" frameborder="0" allowfullscreen></iframe>
-          <iframe width="350" height="250" src="https://www.youtube.com/embed/jhGT8xKrY4o" frameborder="0" allowfullscreen></iframe>
-          <iframe width="350" height="250" src="https://www.youtube.com/embed/xOSwnx9eRE0" frameborder="0" allowfullscreen></iframe>
-          <iframe width="350" height="250" src="https://www.youtube.com/embed/E3wa-4fL4nY" frameborder="0" allowfullscreen></iframe>
-        </div>
-    <!-- <div class="embed-responsive embed-responsive-16by9">
-     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xOSwnx9eRE0"></iframe>
-    </div>-->
-   <h3 class="video-tag"><p> HTML / CSS, RUBY, jQuary, Git 등을 중점적으로 학습하여 비전공자라도 웹 서비스를 만들어 올려볼 수 있도록 도와드립니다.</p> </h3>
-</section>
-
-<section class="works" id="works">
-    <div class="between-sec">
-  
-    </div>
-    <h2><strong>ACTIVITIES & FEATURES</strong></h2>
-    <div class="container"></div>
-      <div class="works-tag"><h3>멋쟁이사자처럼에서 배운다는 것은....</h3></div>
-      <div class="container-fluid">
-        <div class="row works-mid">
-          <div class="col-md-4 col-lg-4 works-pic">
-            <%= image_tag "1st.jpg", class:"yll"%>
-            <P>웹기술을 활용해 필요한 서비스를 만듭니다.</P>
-          </div>
-          <div class="col-md-4 col-lg-4 works-pic">
-            <%= image_tag "2nd.jpg", class:"yll"%>
-            <P>아이디어톤을 통해 서로의 생각을 나눕니다.</P>
-          </div>
-          <div class="col-md-4 col-lg-4 works-pic">
-            <%= image_tag "3rd.jpg", class:"yll"%>
-            <P>해커톤을 진행해 내가 직접 서비스를 만들어 봅니다. </P>
-          </div>
-        </div>
-        </div>
-    </div>
-    <!--<article class="works-pic"></article>-->
-    <!--<article class="works-pic"></article>-->
-    <!--<article class="works-pic"></article>-->
-</section>
-
-<section class="process" id="process">
-    <div class="between-sec">
-      
-    </div>
-    <h2><strong>UPCOMING SCHEDULE</strong></h2>
-    <div class="process-tag"><h3></h3></div>
-    
-    <div class="bs-example">
-    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel"> 
-        <!-- Wrapper for carousel items -->
-        <div class="carousel-inner">
-            <div class="active item">
-                <%= image_tag "schedule_1.jpg" %>
-                <!-- <img src="../images/schedule_1.jpg" alt="First Slide"> -->
-            </div>
-            <div class="item">
-                <%= image_tag "schedule_2.jpg" %>
-                <!-- <img src="../images/schedule_2.jpg" alt="Second Slide"> -->
-            </div>
-            <div class="item">
-                <%= image_tag "schedule_3.jpg" %>
-                <!-- <img src="../images/schedule_3.jpg" alt="Third Slide"> -->
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2><strong>오티 및 엠티</strong></h2>
+                                <p class="item-intro text-muted">3월 18일에 오티 및 엠티가 진행됩니다. </p>
+                                <div class="row">
+                                    <a target="_blank" href="http://map.naver.com/?searchCoord=b7ed5849c7619dee6485f1e615fe74c8aeaed52cef75ced9424af74c25bba1c3&query=67CU67mE7JW1&menu=location&tab=1&lng=e2d4231644a74aac646b6b28159f5ff7&mapMode=0&mpx=09230570%3A37.5823996%2C127.0599768%3AZ12%3A0.0119843%2C0.0060304&lat=2fbaa8164001d50b46a3848498637090&dlevel=12&enc=b64">
+                                    <%=image_tag 'ssddgd.png', class:"img-fluid d-block mx-auto otmt" %>
+                                    </a>
+                                    <a target="_blank" href="http://map.naver.com/?searchCoord=a3b9f91cd244ec2b89cb4bfaced75e48d16de1bf915c1b12ed4fa79eabe770b9&query=7ISc7Jq47Iuc66a964yA7ZWZ6rWQIOuMgOqwleuLuQ%3D%3D&menu=location&tab=1&lng=1883b3759fdb9091bf193d57333fa199&mapMode=0&mpx=09140111%3A37.5645934%2C126.9690209%3AZ12%3A0.0119886%2C0.0060212&lat=30d167d4ac75380a1162b137702d599f&dlevel=12&enc=b64">
+                                    <%=image_tag 'babieng.png', class:"img-fluid d-block mx-auto otmt"%>
+                                    </a>
+                                </div>
+                                <p>멋사에서는 아이디어톤 및 해커톤 이외에도 다양한 행사를 진행합니다. 타 학교와 진행하는 세션 및 연합 엠티를 추진할 것입니다. 
+                                또한 선배 기수의 만남을 통해 멋사를 통해 배운 프로그래밍을 어떻게 활용하고 현업에서 어떠한 도움이 되었는지 들을 수 있는 자리를 마련하고자 합니다. </p>
+                                <ul class="list-inline">
+                                    <li>Date: 2017.03.18</li>
+                                    <li>OT Location: 서울시립대 대강당(예정)</li>
+                                    <li>MT Location: 바비엥(예정)</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> 닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Carousel controls -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
     </div>
-</div>
-    
-    
-    
-    <!--사진파일들 1120*480-->
-</section>
-<section class="member" id="member">
-    <div class="between-sec">
-  
-    </div>
-    <h2><strong>SUPPORTERS & STAFFS</strong></h2>
-    <div class="member-tag"><h3>여러분을 위해 열과 성을 다할 준비가 되어있습니다.</h3></div>
-    <div class="container" id="members">
-      
 
-      
-      <div class="row justify-content-md-center">
-        
-        <div class="col-md-6 col-lg-6 member-pic">
-          <%= image_tag "seyoung.jpg" %>
-          <div class="img-top"><%= image_tag "sy2.jpg" %> </div>
+    <!-- Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2><strong>스터디</strong></h2>
+                                <p class="item-intro text-muted">기초 강의와 기본 강의로 나눠집니다.</p>
+                                <div class="row">
+                                <%=image_tag 'htmllogo.png', class:" img-fluid d-block mx-auto otmt" %>
+                                <br>
+                                <%=image_tag 'railslogo.png', class:"col-md-6 img-fluid d-block mx-auto studyp" %>
+                                <br>
+                                <%=image_tag 'rubylogo.png', class:"col-md-6 img-fluid d-block mx-auto studyp" %>
+                                </div>
+                                <p>HTML/CSS, RUBY의 경우 기초강의로 전체세션에서 수업이 진행되고 스터디는 복습 및 질의 응답을 이루게됩니다.
+                                이후의 ROR등의 수업은 스터디에서 수업이 진행되며 전체세션에서 질의응답 및 심화학습을 진행합니다.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>기초강의: 중간고사 전까지 진행(예정)</li>
+                                    <li>그외강의: 중간고사 이후  진행(예정)</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-6 member-pic">
-          <%= image_tag "harim.jpg" %>
-          <div class="img-top"><%= image_tag "hr2.jpg" %> </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2><strong>정기세션</strong></h2>
+                                <p class="item-intro text-muted">매주 수요일 저녁 7시에 진행됩니다.</p>
+                                <div class="row">
+                                    <%=image_tag 'ssss.jpg', class:"img-fluid d-block mx-auto otmt"%>
+                                </div>
+                                <p>멋사에서는 아이디어톤 및 해커톤 이외에도 다양한 행사를 진행합니다. 타 학교와 진행하는 세션 및 연합 엠티를 추진할 것입니다. 
+                                또한 선배 기수의 만남을 통해 멋사를 통해 배운 프로그래밍을 어떻게 활용하고 현업에서 어떠한 도움이 되었는지 들을 수 있는 자리를 마련하고자 합니다. </p>
+                               <ul class="list-inline">
+                                    <li>일시: 매주 수요일</li>
+                                    <li>장소: 매주 인트라넷을 통해 공지</li>
+                                </ul>
+                                
+                                
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="w-100"></div>
-        <div class="col-md-6 col-lg-6 member-pic">
-          <%= image_tag "changmin.jpg" %>
-          <div class="img-top"><%= image_tag "cm2.jpg" %> </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2><strong>아이디어톤 및 해커톤</strong></h2>
+                                <p class="item-intro text-muted">멋사의 축제!</p>
+                                <div class="row">
+                                    <%=image_tag 'ideaton.png', class:"img-fluid d-block mx-auto otmt col-md-6"%>
+                                    <%=image_tag 'hackton.jpg', class:"img-fluid d-block mx-auto otmt col-md-6"%>
+                                </div>
+                                <div class="row">
+                                <p class="col-md-6">타학교 멋쟁이사자들과 다양한 아이디어를 자랑하는 공식행사인 '아이디어톤'에 출전합니다. 여러분의 상상력과 톡톡뒤는 아이디어를 펼쳐보세요. 순위권 팀에게는 서비스 구현을 위한 기술 지원 및 전문가의 컨설팅을 받을 수 있는 기회가 주어집니다.</p>
+                                <p class="col-md-6">교육 및 스터디를 통해 기른 실력으로 멋쟁이 사자처럼의 공식행사인 해커톤에 출전합니다. 상상에 그쳤던 아이디어를 모든 사자들이 모여 무박2일 동안 구현합니다. 여러분의 모든 것을 쏟아 사이트를 구현하고 실제 서비스하기 위한 좋은 기회이자 새로운 시작입니다.</p>
+
+                                </div>
+                                <ul class="list-inline">
+                                    <li>아이디어톤: 6월</li>
+                                    <li>해커톤: 8월</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-6 member-pic">
-          <%= image_tag "jiyun.jpg" %>
-          <div class="img-top"><%= image_tag "jy2.jpg" %> </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2><strong>2학기 일정</strong></h2>
+                                <div class="row">
+                                    <%=image_tag '404.jpg', class:"img-fluid d-block mx-auto "%>
+                                </div>                                
+                                <h3>확정이 나는대로 공지하겠습니다</h3>
+                                <h4>예정 : 심화 학습 및 기획, 디자인, 안드로이드</h4>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-lg-6 member-pic">
-           <%= image_tag "sejong.jpg" %>
-          <div class="img-top"><%= image_tag "sj2.jpg" %> </div>
-        </div>
-        <div class="col-md-6 col-lg-6 member-pic">
-           <%= image_tag "taki.jpg" %>
-          <div class="img-top"><%= image_tag "tk2.jpg" %> </div>
-        </div>
-      </div>
-  </div>
-</section>
+    </div>
