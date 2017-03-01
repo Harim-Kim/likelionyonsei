@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
       redirect_to '/users/sign_in'
     end
   end
-  
+  def after_sign_in_path_for(resource)
+    plainpage_index_path
+  end 
 end
 
