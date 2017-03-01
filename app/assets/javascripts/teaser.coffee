@@ -3,7 +3,7 @@
 //= require turbolinks
 
 `// Set the date we're counting down to
-var dateString = "2017-03-10 24:00:00";
+var dateString = "2017-03-10 15:00:00";
 var countDownDate = new Date(dateString.replace(' ', 'T')).getTime();
 
 // Update the count down every 1 second
