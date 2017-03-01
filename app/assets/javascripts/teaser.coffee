@@ -3,7 +3,8 @@
 //= require turbolinks
 
 `// Set the date we're counting down to
-var countDownDate = new Date("Mar 10, 2017 24:00:00").getTime();
+var dateString = "2017-03-10 24:00:00";
+var countDownDate = new Date(dateString.replace(' ', 'T')).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -24,7 +25,7 @@ var x = setInterval(function() {
     var elements = document.getElementsByClassName("count");
 
     for (var i = 0; i < elements.length; i++) {
-      elements[i].innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 ";
+      elements[i].innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초";
     }
     
     // If the count down is over, write some text 
