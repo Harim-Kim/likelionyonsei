@@ -16,7 +16,8 @@
 
     <%= stylesheet_link_tag    'teaser', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'teaser', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= render "partials/google" %> 
+ </head>
 
   <body>
     <%= yield %>
