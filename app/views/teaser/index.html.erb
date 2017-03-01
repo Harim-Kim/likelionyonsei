@@ -15,26 +15,19 @@
         <!-- Slides -->
 
       <div class="swiper-slide">
-        <div class="home-header-wrapper" style="background-image: url('http://d2hmp4n7p97ldw.cloudfront.net/assets/home/slide-01-8cbc930548eeb4bea8aa8852ab1526e3cb670f4bce5c86a91609afec78715f7d.jpg')">
+        <div class="home-header-wrapper">
+            <video autoplay loop poster = "img.jpg">
+        		<source src = "movie.mp4"type = "video / mp4">
+        	</video>
           <div class="container home-header">
             <div class="home-header-box-1">
                 <h1>멋쟁이 사자처럼 ✕ 연세대</h1>
                 <hr>
-                <h2 class="font-weight-bold float-xs-right"><font>로그인</font></h2>
+                <h2 class="font-weight-bold float-xs-right"><font>지원하러 가기</font></h2>
 
             </div>
-            <div class="home-header-box-1">
-                <div class="log-form">
-                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                      <%= f.email_field :email, autofocus: true, placeholder: "이메일" %>
-                      <%= f.password_field :password, autocomplete: "off", placeholder: "비밀번호" %>
-                      <%= f.button "로그인", class: "log-btn" %>
-                      <span>powered by </span><span style="color: #4285F4;">G</span><span style="color: #DB4437;">o</span><span style="color: #F4B400;">o</span><span style="color: #4285F4;">g</span><span style="color: #0F9D58;">l</span><span style="color: #DB4437;">e</span>
-                    <% end %>
-                </div>
-            </div>
             <div class="home-header-box-2">
-              <h2></h2>
+              <h2>지원마감까지 <span class="count">∞일 ∞시간 ∞분 ∞초</span></h2>
               <h6>컴퓨터를 모르는 학생들이<br>프로그래밍 교육을 통해 원하는 IT서비스를 직접 런칭합니다</h6>
             </div>
           </div>
@@ -54,28 +47,15 @@
         <img src="http://d2hmp4n7p97ldw.cloudfront.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png" alt="Likelion white" />
       </div>
       <div class="home-header-box-mobile-title">
-        <div class="slogan font-weight-bold">로그인</div>
+        <div class="slogan font-weight-bold">면접 관리 시스템</div>
         <h1>멋쟁이 사자처럼 ✕ 연세대</h1>
         <hr>
-            <div class="log-form-mobile">
-                <form>
-                    <input type="text" title="username" placeholder="아이디" />
-                    <input type="password" title="username" placeholder="비밀번호" />
-                    <button type="submit" class="log-btn">로그인</button>
-                </form>
-            </div>
         <br>
         <h4>
+          면접까지 <span class="count">∞일 ∞시간 ∞분 ∞초</span>
         </h4>
       </div>
       <a href="#home-body" class="home-header-box-moblie-arrow-down">
       </a>
   </div>
 </div>
-
-<% if flash[:alert] %>
-  <script>
-    toastr.options.positionClass = "toast-bottom-left"
-    toastr.error('아이디나 비밀번호가 틀립니다')
-  </script>
-<% end %>

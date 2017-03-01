@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#2a2a2a" />
+    <meta name="author" content="LIKE LION > YONSEI" />
+    <meta property="og:type" content="website" />
+
+    <title>로그인 | LIKE LION@YONSEI</title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'sign_in', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'sign_in', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

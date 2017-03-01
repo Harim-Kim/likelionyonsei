@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
+  get 'teaser/index'
+
   root 'home#index'
   get 'home/index'
   get 'users/sign_up' => 'access#denied'
-  devise_for :users, controllers:{
-    session: 'users/sessions'
+  
+  devise_for :users, controllers: { 
+    sessions: "users/sessions",
+    passwords: "users/passwords",
+    registrations: "users/registrations"
   }
-  
-  
-  
-  
-  
-  
   
   get 'assignment/:id' => 'plainpage#assignment'
   get 'assignment/:id/submit' => 'plainpage#submit_assignment'
