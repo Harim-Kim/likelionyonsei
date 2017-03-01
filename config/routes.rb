@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'teaser/index'
+ root 'teaser#index'
 
-  root 'home#index'
   get 'home/index'
   get 'users/sign_up' => 'access#denied'
   
