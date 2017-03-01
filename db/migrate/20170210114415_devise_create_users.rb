@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :major
       t.string :klass
       t.boolean :admin
-
+     
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
