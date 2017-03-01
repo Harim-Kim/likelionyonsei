@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   get 'teaser/index'
-
-  root 'home#index'
+  root 'teaser#index'
   get 'home/index'
   get 'users/sign_up' => 'access#denied'
+  
+  get 'home' => 'home#index'
   
   devise_for :users, controllers: { 
     sessions: "users/sessions",
