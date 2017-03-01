@@ -1,3 +1,7 @@
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+
 `// Set the date we're counting down to
 var countDownDate = new Date("Mar 10, 2017 24:00:00").getTime();
 
