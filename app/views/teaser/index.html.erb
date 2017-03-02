@@ -7,6 +7,7 @@
 
 </nav>
 
+<% if not mobile_device? %>
 
 <!-- Slider main container -->
 <div class="swiper-container hidden-md-down">
@@ -37,16 +38,18 @@
       </div>
 
     </div>
-    <!-- If we need pagination -->
+    <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 
 </div>
+
+<% end %>
 
 <!-- mobile main header -->
 <div class="home-header-wrapper hidden-lg-up" style="background-image: url('https://d2hmp4n7p97ldw.cloudfront.net/assets/home/slide/02-background-be82ae1605d3b8d909373f516e7aa593da9ab78ded7efd9177f94977d916b1c6.png')">
   <div class="container home-header">
       <div class="home-header-box-moblie-logo">
-        <a href="/home"><img src="http://d2hmp4n7p97ldw.cloudfront.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png" alt="Likelion white" /></a>
+        <a href="/home"><img src="http://d2hmp4n7p97ldw.cloudfront.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png" alt="Likelion white"/></a>
       </div>
       <div class="home-header-box-mobile-title">
         <div class="slogan font-weight-bold"><a href="http://jasoseol.com/recruit/15259">지원하러 가기</a></div>
