@@ -163,6 +163,33 @@ class PlainpageController < ApplicationController
     @fl = Fl.all.sort
   end
   
+  def update_assignment
+    
+    @assignment = Assignment.find(params[:num])
+    unless @assignment.user_id == current_user.id
+      redirect_to '/plainpage/index'
+    end
+    
+    @sl = Sl.all.sort
+    @fl = Fl.all.sort
+  end
+  
+  def updating_assignment
+    a = Assignment.find(params[:num])
+    a.title = params[:title]
+    a.content = params[:content]
+    a.c9_url = params[:c9_url]
+    my_file = params[:pic]
+    uploader = YonseiUploader.new
+    uploader.store!(my_file)
+    a.img_url = uploader.url
+    a.save
+    
+    redirect_to '/plainpage/index'
+  end
+  
+  
+  
   def create_comment
     Comment.create(content: params[:content],
                    user_id: current_user.id,

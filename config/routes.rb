@@ -12,10 +12,13 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   
+  
+  post 'assignment/create_assignment' => 'plainpage#create_assignment'
+  get 'assignment/update/:num' => 'plainpage#update_assignment'
   get 'assignment/:id' => 'plainpage#assignment'
   get 'assignment/:id/submit' => 'plainpage#submit_assignment'
   get 'assignment/:assign_id/:user_id' => 'plainpage#show_assignment'
-  post 'assignment/create_assignment' => 'plainpage#create_assignment'
+  post 'assignment/updating_assignment/:num' => 'plainpage#updating_assignment'
   
   post 'create_comment' => 'plainpage#create_comment'
   # get 'plainpage/formm'

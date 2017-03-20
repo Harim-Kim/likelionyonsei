@@ -3,7 +3,7 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
- 	 config.authenticate_with do
+	 config.authenticate_with do
 	    warden.authenticate! scope: :user
 	    if current_user.admin==false
 	      redirect_to main_app.plainpage_index_path
