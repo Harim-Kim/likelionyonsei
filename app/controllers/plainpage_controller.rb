@@ -1,10 +1,12 @@
 class PlainpageController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   layout 'gentelella'
   def index
     @sl = Sl.all.sort
     @fl = Fl.all.sort
-    @weekly = Weekly.last.content
+    
+    @weekly = Weekly.last
+    
     @assign = Assign.all.reverse
     @notice = Notice.last(6)
     @post = Post.last(6)
